@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\\n$fmt\\n" "$@"
+}
+
+install_asdf_plugin() {
+  local name="$1"
+  local url="$2"
+
+  if ! asdf plugin-list | grep -Fq "$name"; then
+    asdf plugin add "$name" "$url"
+  fi
+}
+
+install_asdf_language() {
+  local language="$1"
+  local version="$2"
+  asdf install "$language" "$version"
+  asdf global "$language" "$version"
+}
+
+DEFAULT_NODEJS_VERSION="16.13.0"
+DEFAULT_PYTHON_VERSION="3.10.0"
+
+printf "\\nWhich version of Node.js would you like to install?
+Available versions: https://semver.io/node/versions
+(Leave blank for default: %s)\\n" "$DEFAULT_NODEJS_VERSION"
+read -r -p "> " ASDF_NODEJS_VERSION
+export ASDF_NODEJS_VERSION=${ASDF_NODEJS_VERSION:-$DEFAULT_NODEJS_VERSION}
+
+printf "\\nWhich version of Python would you like to install?
+(Leave blank for default: %s)\\n" "$DEFAULT_PYTHON_VERSION"
+read -r -p "> " ASDF_PYTHON_VERSION
+export ASDF_PYTHON_VERSION=${ASDF_PYTHON_VERSION:-$DEFAULT_PYTHON_VERSION}
+
+# Install and configure ASDF
+install_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
+install_asdf_plugin "python" 
+
+fancy_echo "Installing Node..."
+
+bash "${HOME}/.asdf/plugins/nodejs/bin/import-release-team-keyring"
+install_asdf_language "nodejs" "$ASDF_NODEJS_VERSION"
+fancy_echo "Node --> $(command -v node)"
+fancy_echo "NPM --> $(command -v npm)"
+
+fancy_echo "Installing Python..."
+install_asdf_language "python" "$ASDF_PYTHON_VERSION"
+
+###############################################################################
+# Install oh-my-zsh
+###############################################################################
+fancy_echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+source ~/.zshrc

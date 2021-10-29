@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# disable the annoying unidentified developer warning
+sudo spctl --master-disable

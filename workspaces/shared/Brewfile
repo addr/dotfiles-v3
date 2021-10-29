@@ -1,0 +1,58 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/bundle'
+tap 'homebrew/services'
+tap 'homebrew/cask-versions'
+tap 'railwaycat/emacsmacport'
+tap 'epk/epk' # for sf mono powerline font
+
+# Other utilities
+brew 'autojump'
+brew 'coreutils'
+brew 'findutils'
+brew 'bash'
+brew 'git'
+brew 'gnupg'
+brew 'zsh'
+brew 'direnv'
+brew 'cmake'
+brew 'asdf'
+brew 'starship'
+brew 'curl'
+brew 'httpie'
+brew 'vim'
+brew 'ssh-copy-id'
+brew 'nmap'
+brew 'wget'
+brew 'diff-so-fancy'
+brew 'fd'
+brew 'ripgrep'
+brew 'emacs-mac', args: ["with-modules"]
+brew 'koekeishiya/formulae/yabai'
+brew 'koekeishiya/formulae/skhd'
+
+# Fonts
+cask "font-fira-code"
+cask 'font-fira-code-nerd-font'
+cask 'font-inconsolata-nerd-font'
+cask 'font-sf-mono-nerd-font'
+
+# Casks
+cask 'docker'
+cask 'firefox'
+cask 'visual-studio-code'
+cask 'insomnia'
+cask 'muzzle'
+cask 'contexts'
+cask 'karabiner-elements'
+cask 'postico'
+cask '1password'
+cask '1password-cli'
+cask 'google-chrome'
+
+# Mac App Store
+mas 'PastePal', id: 1503446680
+mas 'Hidden Bar', id: 1452453066
+mas 'Amphetamine', id: 937984704

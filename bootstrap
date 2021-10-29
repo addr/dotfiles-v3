@@ -1,0 +1,123 @@
+#!/usr/bin/env bash
+
+################################################################################
+# bootstrap
+#
+# This script is intended to set up a new Mac computer with my dotfiles and
+# other development preferences.
+################################################################################
+ 
+# Thank you, thoughtbot!
+bootstrap_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\\n[BOOTSTRAP] $fmt\\n" "$@"
+}
+
+sudo_askpass() {
+  if [ -n "$SUDO_ASKPASS" ]; then
+    sudo --askpass "$@"
+  else
+    sudo "$@"
+  fi
+}
+
+osname=$(uname)
+
+export DEFAULT_WORKSPACE_NAME="personal"
+export COMMANDLINE_TOOLS="/Library/Developer/CommandLineTools"
+export BOOTSTRAP_DIR="${HOME}"
+
+PS3="> "
+
+comp=$(scutil --get ComputerName)
+host=$(scutil --get LocalHostName)
+
+if [ -z "$comp" ] || [ -z "$host" ]; then
+  DEFAULT_COMPUTER_NAME="Andy's Mac"
+  DEFAULT_HOST_NAME="andys-mac"
+else
+  DEFAULT_COMPUTER_NAME="$comp"
+  DEFAULT_HOST_NAME="$host"
+fi
+
+DEFAULT_DOTFILES_BRANCH="master"
+DEFAULT_TIME_ZONE="America/New_York"
+
+################################################################################
+# Make sure we're on a Mac before continuing
+################################################################################
+
+if [ "$osname" == "Linux" ]; then
+  bootstrap_echo "Oops, looks like you're on a Linux machine. Please have a look at
+  my Linux Bootstrap script: https://github.com/joshukraine/linux-bootstrap"
+  exit 1
+elif [ "$osname" != "Darwin" ]; then
+  bootstrap_echo "Oops, it looks like you're using a non-UNIX system. This script
+only supports Mac. Exiting..."
+  exit 1
+fi
+
+################################################################################
+# Check for presence of command line tools if macOS
+################################################################################
+
+if [ ! -d "$COMMANDLINE_TOOLS" ]; then
+  bootstrap_echo "Apple's command line developer tools must be installed before
+running this script. Attempting to install automatically, but if this fails, just run 'xcode-select --install' from
+the terminal and then follow the prompts. Once the command line tools have been
+installed, you can try running this script again."
+  CLT_PLACEHOLDER="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
+  sudo_askpass touch "$CLT_PLACEHOLDER"
+
+  CLT_PACKAGE=$(softwareupdate -l | \
+                grep -B 1 "Command Line Tools" | \
+                awk -F"*" '/^ *\*/ {print $2}' | \
+                sed -e 's/^ *Label: //' -e 's/^ *//' | \
+                sort -V |
+                tail -n1)
+  sudo_askpass softwareupdate -i "$CLT_PACKAGE"
+  sudo_askpass rm -f "$CLT_PLACEHOLDER"
+  if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]
+  then
+    if [ -n "$STRAP_INTERACTIVE" ]; then
+      echo
+      logn "Requesting user install of Xcode Command Line Tools:"
+      xcode-select --install
+    else
+      echo
+      abort "Run 'xcode-select --install' to install the Xcode Command Line Tools."
+    fi
+  fi
+fi
+#############################################################################
+# 1. Install Homebrew if it doesn't already exist
+#############################################################################
+if ! command -v brew >/dev/null; then
+  fancy_echo "Installing Homebrew ..."
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+    export PATH="/usr/local/bin:$PATH"
+fi
+
+if brew list --formulae | grep -Fq brew-cask; then
+  bootstrap_echo "Uninstalling old Homebrew-Cask ..."
+  brew uninstall --force brew-cask
+fi
+
+bootstrap_echo "Updating Homebrew formulae ..."
+brew update --force # https://github.com/Homebrew/brew/issues/1151
+
+#############################################################################
+# 2. Now use Zero to install apps and symlink dotfiles
+#############################################################################
+#############################################################################
+set -e
+
+printf "\\nWhich workspace would you like to setup?. (Leave blank for default: %s)\\n" "$DEFAULT_WORKSPACE_NAME"
+read -r -p "> " WORKSPACE_NAME
+export WORKSPACE_NAME=${WORKSPACE_NAME:-$DEFAULT_WORKSPACE_NAME}
+
+./zero/setup ${WORKSPACE_NAME}
