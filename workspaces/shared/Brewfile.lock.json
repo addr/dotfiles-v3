@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "dd2a2514251cc21c2fef47705b5e70b78dca2180"
+        "revision": "686a704783879b65066a9badda9e07f9c7dcb153"
       },
       "homebrew/cask-fonts": {
         "revision": "997937c566a2488615459a10670f41d1f04801d6"
@@ -1018,7 +1018,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.3.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "083f68500409c43e72492f3f5919010c7d396d12",
+        "Homebrew/homebrew-core": "cad2415d330ae9547ebc590ef8a9a39cc99732bc",
         "CLT": "13.0.0.0.1.1630607135",
         "Xcode": "13.0",
         "macOS": "11.6.1"
