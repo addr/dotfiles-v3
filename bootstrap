@@ -118,6 +118,6 @@ set -e
 
 printf "\\nWhich workspace would you like to setup?. (Leave blank for default: %s)\\n" "$DEFAULT_WORKSPACE_NAME"
 read -r -p "> " WORKSPACE_NAME
-export WORKSPACE_NAME=${WORKSPACE_NAME:-$DEFAULT_WORKSPACE_NAME}
+export WORKSPACE_NAME=${WORKSPACE_NAME:=$DEFAULT_WORKSPACE_NAME}
 
 ./zero/setup ${WORKSPACE_NAME}

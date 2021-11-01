@@ -6,8 +6,6 @@ Another rewrite of my dotfiles. Why the constant rewriting? For something that I
 - Automated install of software for each platform. I should just be able to run a script to download, install, and configure the software I need.
 - Automated configuration of OS and software. This is where the dotfiles come in.
 
-
-
 ## Getting Started
 
 tldr; `git clone --recursive https://github.com/addr/dotfiles ~/.dotfiles && cd ~/.dotfiles && make`
@@ -20,19 +18,34 @@ tldr; `make bootstrap`
 
 In order to fetch our dotfiles and configure the system, we first need to do some basic bootstrapping. This includes:
 
-- Installing `git`
-- Installing `homebrew`
+- Installing `git`. You'll have to do this manually, which is usually just `xcode-select --install`
+- Installing `homebrew` (automatic)
 - Installing `zero` (which is what I use to automate setup from dotfiles)
 
 ``` shell
 git clone --recursive https://github.com/addr/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+make
 ```
+
+Running the above is all you need to do. You will probably have to restart and rerun `make` if there are system updates, but other than that it is pretty much all automated.
+
+Note that it isn't completely unattended: you'll have to babysit it as there are prompts at various points along the way.
+
+### Manual Setup
+
+There are a few things that, unfortunately, can't be scripted or put into a configuration file.
 
 ## Background
 
-### MacOS Defaults
-
-- Set computer name and hostname
+This section is like a description of the various parts of my dotfiles (at least the noteworthy ones).
 
 ### Tiling Window Manager (Yabai)
 
+Yabai is a powerful tiling window manager. I started out with Amethyst, which is awesome, but more limited. Yabai can be fully controlled from the command line and a text-based config file, and is the closest thing to i3, Sway, etc... on Linux.
+
+My config is mostly taken from: https://cbrgm.net/post/2021-05-5-setup-macos/
+
+### Hotkeys (SKHD)
+
+SKHD is primarily used to assign hotkeys to Yabai. It is the other component to providing an i3-like experience on Mac OS.
