@@ -1,6 +1,6 @@
 com.apple.dock:
   autohide: true
-  tilesize: 36
+  tilesize: 55
   show-recents: false
   min-effect: "scale"
   mru-spaces: false
@@ -15,12 +15,13 @@ com.apple.driver.AppleBluetoothMultitouch.trackpad:
 
 NSGlobalDomain:
   AppleShowAllExtensions: true
-  KeyRepeat: 6
-  InitialKeyRepeat: 25
+  KeyRepeat: 1
+  InitialKeyRepeat: 10
   AppleShowScrollBars: "Always"
   NSNavPanelExpandedStateForSaveMode: true
   NSNavPanelExpandedStateForSaveMode2: true
   com.apple.mouse.tapBehavior: 1
+  _HIHideMenuBar: true
 
 com.apple.menuextra.clock:
   DateFormat: "EEE d MMM HH:mm:ss"

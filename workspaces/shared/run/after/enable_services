@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-brew services start yabai skhd
+brew services start yabai
+brew services start skhd
 
