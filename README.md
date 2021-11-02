@@ -56,6 +56,16 @@ SKHD is primarily used to assign hotkeys to Yabai. It is the other component to 
 
 #### Calculator (Numi)
 
+Yeah, you can use the built in MacOS calculator, or do the basic stuff in Spotlight, but for anything more Numi is awesome.
+
+#### Menu Bar Calendar (Itsycal)
+
+I hate needing a separate window for my calendar. Itsycal allows me to see, at a glance, what I've got coming up without having to open a full calendar window.
+
+### Developer Stuff
+
+There's a lot of
+
 ### Personal
 
 These are a few of the miscellaneous personal apps I use.
