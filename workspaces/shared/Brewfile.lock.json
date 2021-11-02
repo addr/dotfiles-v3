@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "3d76751c8f6e725259f86e4820751d8bff3ed3d6"
+        "revision": "98c0c7303ea8d9c420ce29b0355961b1161c8b09"
       },
       "homebrew/cask-fonts": {
         "revision": "997937c566a2488615459a10670f41d1f04801d6"
@@ -1094,7 +1094,7 @@
         }
       },
       "firefox": {
-        "version": "93.0",
+        "version": "94.0",
         "options": {
           "full_name": "firefox",
           "args": {
@@ -1231,7 +1231,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.3.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "bb464fe1d7e053bf039436749a01f4c60f5c347c",
+        "Homebrew/homebrew-core": "1f98b163997e1983c614b4a14063032781bd74a6",
         "CLT": "13.0.0.0.1.1630607135",
         "Xcode": "13.0",
         "macOS": "11.6.1"

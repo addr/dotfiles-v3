@@ -44,6 +44,8 @@ install_asdf_plugin "python"
 
 fancy_echo "Installing Node..."
 
+export NODEJS_CHECK_SIGNATURES=no
+
 bash "${HOME}/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 install_asdf_language "nodejs" "$ASDF_NODEJS_VERSION"
 fancy_echo "Node --> $(command -v node)"

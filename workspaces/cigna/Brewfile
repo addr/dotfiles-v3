@@ -4,4 +4,6 @@ tap 'cigna_techmakers/cignabrew', 'https://git.sys.cigna.com/cigna_techmakers/ci
 cask 'mattermost'
 cask 'figma'
 cask 'robo-3t'
-cask 'certfix'
+
+brew 'certfix'
+brew 'awscli'
