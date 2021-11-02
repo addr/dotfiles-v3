@@ -40,12 +40,26 @@ There are a few things that, unfortunately, can't be scripted or put into a conf
 
 This section is like a description of the various parts of my dotfiles (at least the noteworthy ones).
 
-### Tiling Window Manager (Yabai)
+### Essential Utilities
+
+#### Tiling Window Manager (Yabai)
 
 Yabai is a powerful tiling window manager. I started out with Amethyst, which is awesome, but more limited. Yabai can be fully controlled from the command line and a text-based config file, and is the closest thing to i3, Sway, etc... on Linux.
 
 My config is mostly taken from: https://cbrgm.net/post/2021-05-5-setup-macos/
 
-### Hotkeys (SKHD)
+With some bits from: https://github.com/koekeishiya/dotfiles/blob/master/skhd/skhdrc
+
+#### Hotkeys (SKHD)
 
 SKHD is primarily used to assign hotkeys to Yabai. It is the other component to providing an i3-like experience on Mac OS.
+
+#### Calculator (Numi)
+
+### Personal
+
+These are a few of the miscellaneous personal apps I use.
+
+#### Package Tracking
+
+[Parcel](https://parcelapp.net) is great, and it has both iOS and Mac versions.

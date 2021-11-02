@@ -31,6 +31,7 @@ brew 'nmap'
 brew 'wget'
 brew 'diff-so-fancy'
 brew 'fd'
+brew 'htop'
 brew 'ripgrep'
 brew 'emacs-mac', args: ["with-modules"]
 brew 'koekeishiya/formulae/yabai'
@@ -54,6 +55,7 @@ cask 'postico'
 cask '1password'
 cask '1password-cli'
 cask 'google-chrome'
+cask 'numi'
 
 # Mac App Store
 mas 'PastePal', id: 1503446680

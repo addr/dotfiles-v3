@@ -81,6 +81,11 @@ if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
+if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-history-substring-search" ]; then
+  git clone https://github.com/zsh-users/zsh-history-substring-search.git $ZSH_CUSTOM/plugins/zsh-history-substring-search
+fi
+
+
 if [ ! -d "${ZSH_CUSTOM}/plugins/poetry" ]; then
   mkdir -p "${ZSH_CUSTOM}/plugins/poetry"
   poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry

@@ -6,7 +6,7 @@ SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(asdf autojump alias-finder cp docker direnv history git gnu-utils vi-mode command-not-found zsh-autosuggestions poetry zsh-syntax-highlighting)
+plugins=(asdf autojump alias-finder cp docker direnv history git gnu-utils vi-mode command-not-found zsh-autosuggestions poetry zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
