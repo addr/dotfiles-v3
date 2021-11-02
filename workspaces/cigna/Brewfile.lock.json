@@ -1,0 +1,62 @@
+{
+  "entries": {
+    "tap": {
+      "cigna_techmakers/cignabrew": {
+        "revision": "d1ec7303f884431b724435e8b31570adfc3ef2c4",
+        "options": {
+          "clone_target": "https://git.sys.cigna.com/cigna_techmakers/cignabrew.git"
+        }
+      },
+      "homebrew/cask": {
+        "revision": "3d76751c8f6e725259f86e4820751d8bff3ed3d6"
+      }
+    },
+    "brew": {
+      "cigna-setup": {
+        "version": "0.10.1",
+        "bottle": false
+      }
+    },
+    "cask": {
+      "mattermost": {
+        "version": "5.0.1",
+        "options": {
+          "full_name": "mattermost",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "figma": {
+        "version": "104.1.0",
+        "options": {
+          "full_name": "figma",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "robo-3t": {
+        "version": "1.4.4,e6ac9ec",
+        "options": {
+          "full_name": "robo-3t",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.3.2",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "bb464fe1d7e053bf039436749a01f4c60f5c347c",
+        "CLT": "13.0.0.0.1.1630607135",
+        "Xcode": "13.0",
+        "macOS": "11.6.1"
+      }
+    }
+  }
+}

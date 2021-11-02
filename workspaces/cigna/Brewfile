@@ -1,5 +1,7 @@
 tap 'homebrew/cask'
+tap 'cigna_techmakers/cignabrew', 'https://git.sys.cigna.com/cigna_techmakers/cignabrew.git'
 
 cask 'mattermost'
 cask 'figma'
 cask 'robo-3t'
+cask 'certfix'
