@@ -54,6 +54,12 @@ With some bits from: https://github.com/koekeishiya/dotfiles/blob/master/skhd/sk
 
 SKHD is primarily used to assign hotkeys to Yabai. It is the other component to providing an i3-like experience on Mac OS.
 
+#### Karabiner Elements
+
+#### Contexts
+
+A fast app switcher on steroids, and well worth the money. This allows me to arbitrarily switch windows at ease by using a keyboard shortcut and searching for a window. A bonus is being able to use Vim navigation within the app switcher.
+
 #### Calculator (Numi)
 
 Yeah, you can use the built in MacOS calculator, or do the basic stuff in Spotlight, but for anything more Numi is awesome.
@@ -64,7 +70,7 @@ I hate needing a separate window for my calendar. Itsycal allows me to see, at a
 
 ### Developer Stuff
 
-There's a lot of
+There's a lot of stuff here, but a few bear mentioning.
 
 ### Personal
 
