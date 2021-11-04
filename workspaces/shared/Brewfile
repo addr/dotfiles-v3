@@ -37,6 +37,7 @@ brew 'ripgrep'
 brew 'emacs-mac', args: ["with-modules"]
 brew 'koekeishiya/formulae/yabai'
 brew 'koekeishiya/formulae/skhd'
+brew 'fontconfig'
 
 # Fonts
 cask "font-fira-code"
@@ -46,6 +47,7 @@ cask 'font-sf-mono-nerd-font'
 
 # Casks
 cask 'docker'
+cask 'alfred'
 cask 'firefox'
 cask 'visual-studio-code'
 cask 'insomnia'

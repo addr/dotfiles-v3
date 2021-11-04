@@ -19,3 +19,9 @@ eval "$(direnv hook zsh)"
 if [ -f "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
 fi
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+

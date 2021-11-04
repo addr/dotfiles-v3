@@ -1,9 +1,16 @@
 tap 'homebrew/cask'
+tap 'aws/tap'
 tap 'cigna_techmakers/cignabrew', 'https://git.sys.cigna.com/cigna_techmakers/cignabrew.git'
+tap 'mongodb/brew'
 
 cask 'mattermost'
 cask 'figma'
 cask 'robo-3t'
+cask 'webex'
 
 brew 'certfix'
 brew 'awscli'
+brew 'yarn'
+brew 'aws-sam-cli'
+brew 'mongodb-database-tools'
+
